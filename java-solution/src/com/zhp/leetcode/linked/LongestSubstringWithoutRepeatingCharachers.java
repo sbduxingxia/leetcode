@@ -9,7 +9,7 @@ import java.util.HashMap;
  */
 public class LongestSubstringWithoutRepeatingCharachers {
     public static int solution(String s){
-        HashMap<Byte,Integer> hadChar = new HashMap<>();
+        HashMap<Byte,Integer> hadChar = new HashMap<Byte, Integer>();
         int maxLenght = 0,beginIndex = 0;
         byte[] chars = s.getBytes();
         for(int i=0;i<chars.length;i++){
