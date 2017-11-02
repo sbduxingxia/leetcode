@@ -5,6 +5,7 @@ import com.zhp.leetcode.linked.def.ListNode;
 /**
  * @author zhp.dts
  * @date 2017/11/2.
+ * @info 求两个数的和
  */
 public class AddTwoNumbers {
     public static ListNode solution(ListNode l1, ListNode l2){

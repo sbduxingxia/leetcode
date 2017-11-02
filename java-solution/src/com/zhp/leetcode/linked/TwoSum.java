@@ -5,6 +5,7 @@ import java.util.HashMap;
 /**
  * @author zhp.dts
  * @date 2017/11/2.
+ * @info 获取数组中和为目标值的两个值的位置
  */
 public class TwoSum {
     public static int[] solution(int [] list,int target){
