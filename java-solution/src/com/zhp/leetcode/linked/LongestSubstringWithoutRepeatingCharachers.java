@@ -29,7 +29,7 @@ public class LongestSubstringWithoutRepeatingCharachers {
     public static void main(String[] args){
         String s = "abcouyphagkrfxzdefescyouyphagkrfxz";
         System.out.println(solution(s));
-        s = "c";
+        s = "";
         System.out.println(solution(s));
     }
 }
