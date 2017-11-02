@@ -26,9 +26,42 @@ public class LongestSubstringWithoutRepeatingCharachers {
         }
         return maxLenght;
     }
+
+    /**
+     * 效率高
+     * @param s
+     * @return
+     */
+    public static int solution2(String s){
+        byte[] chats = s.getBytes();
+        int maxLength = 0,beginIndex=0;
+
+        for(int i = 0;i<chats.length;i++){
+            boolean isHad = false;
+            byte one = chats[i];
+            for(int j = beginIndex;j<i;j++){
+                if(chats[j]==one){
+                    isHad=true;
+                    beginIndex=j+1;
+                    break;
+                }
+            }
+            if(isHad){
+                if(maxLength<i-beginIndex+1){
+                    maxLength=i-beginIndex+1;
+                }
+            }
+        }
+        if(maxLength<chats.length-beginIndex){
+            maxLength=chats.length-beginIndex;
+        }
+        return maxLength;
+    }
     public static void main(String[] args){
         String s = "abcouyphagkrfxzdefescyouyphagkrfxz";
-        System.out.println(solution(s));
+        long nanoTime = (System.nanoTime());
+        System.out.println(solution2(s));
+        System.out.println(System.nanoTime()-nanoTime);
         s = "";
         System.out.println(solution(s));
     }

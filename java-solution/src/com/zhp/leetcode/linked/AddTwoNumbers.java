@@ -42,6 +42,8 @@ public class AddTwoNumbers {
         }
         return result;
     }
+
+
     public static void main(String[] args){
         ListNode l1 = new ListNode(2);
         l1.next = new ListNode(4);
@@ -50,8 +52,26 @@ public class AddTwoNumbers {
         ListNode l2 = new ListNode(5);
         l2.next = new ListNode(6);
         l2.next.next = new ListNode(6);
+        long nanoTime = System.nanoTime(),nextTime=System.nanoTime();
+        ListNode result = new ListNode(0);
 
-        ListNode result = solution(l1,l2);
+
+        nanoTime = (System.nanoTime());
+        result = solution(l1,l2);
+        nextTime =(System.nanoTime());
+        System.out.println(nextTime-nanoTime);
+
+        while(result!=null){
+            System.out.print(result.val+"->");
+            result = result.next;
+        }
+
+
+        nanoTime = (System.nanoTime());
+        result = solution2(l1,l2);
+        nextTime =(System.nanoTime());
+        System.out.println(nextTime-nanoTime);
+
         while(result!=null){
             System.out.print(result.val+"->");
             result = result.next;

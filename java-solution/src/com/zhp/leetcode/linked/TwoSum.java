@@ -22,9 +22,6 @@ public class TwoSum {
 
     public static int[] solution2(int [] list,int target){
         int[] result = new int[2];
-        if(list.length<2) {
-            return result;
-        }
         HashMap<Integer,Integer> value2Index = new HashMap<Integer,Integer>();
         for(int i=0;i<list.length;i++){
             int foundKey = target - list[i];
@@ -62,19 +59,24 @@ public class TwoSum {
         return result;
     }*/
     public static void main(String [] args){
-        int [] list = {1,2,3,4,5,6,7,8,9,10,11,23};
+        int [] list = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,23};
         int target = 24;
         int [] result = new int[2];
-        System.out.println(System.currentTimeMillis());
-        result = solution(list,target);
-        System.out.println(System.currentTimeMillis());
-        System.out.println(result[0]+","+result[1]);
+        long nanoTime = System.nanoTime(),nextTime=System.nanoTime();
 
 
-        System.out.println(System.currentTimeMillis());
-        result = solution2(list,target);
-        System.out.println(System.currentTimeMillis());
-        System.out.println(result[0]+","+result[1]);
+        nanoTime = (System.nanoTime());
+        int [] result1 = solution(list,target);
+        nextTime =(System.nanoTime());
+        System.out.println(nextTime-nanoTime);
+        System.out.println(result1[0]+","+result1[1]);
+
+
+        /*nanoTime = (System.nanoTime());
+        int [] result2 = solution(list,target);
+        nextTime =(System.nanoTime());
+        System.out.println(nextTime-nanoTime);
+        System.out.println(result2[0]+","+result2[1]);*/
 
 
         /*System.out.println(System.currentTimeMillis());
