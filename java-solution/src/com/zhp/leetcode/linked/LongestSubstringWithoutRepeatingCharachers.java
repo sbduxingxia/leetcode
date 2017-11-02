@@ -21,7 +21,7 @@ public class LongestSubstringWithoutRepeatingCharachers {
             }
             hadChar.put(chars[i],i);
         }
-        if(maxLenght<chars.length-beginIndex-1){
+        if(maxLenght<chars.length-beginIndex){
             maxLenght=chars.length-beginIndex;
         }
         return maxLenght;
@@ -29,7 +29,7 @@ public class LongestSubstringWithoutRepeatingCharachers {
     public static void main(String[] args){
         String s = "abcouyphagkrfxzdefescyouyphagkrfxz";
         System.out.println(solution(s));
-        s = "pwwkew";
+        s = "c";
         System.out.println(solution(s));
     }
 }
