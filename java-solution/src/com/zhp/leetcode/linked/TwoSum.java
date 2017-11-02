@@ -8,21 +8,15 @@ import java.util.HashMap;
  */
 public class TwoSum {
     public static int[] solution(int [] list,int target){
-        int[] result = new int[2];
-        if(list.length<2) {
-            return result;
-        }
         HashMap<Integer,Integer> value2Index = new HashMap<Integer,Integer>();
         for(int i=0;i<list.length;i++){
             if(value2Index.containsKey(list[i])){
-                result[0] = value2Index.get(list[i]);
-                result[1] = i;
-                break;
+                return new int[]{value2Index.get(list[i]),i};
             }
             int foundKey = target - list[i];//少一次运算
             value2Index.put(foundKey,i);
         }
-        return result;
+        throw new IllegalArgumentException("没有找到答案");
     }
 
     public static int[] solution2(int [] list,int target){
