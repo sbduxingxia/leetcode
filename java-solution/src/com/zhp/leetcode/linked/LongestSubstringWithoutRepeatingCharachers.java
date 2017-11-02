@@ -10,15 +10,26 @@ import java.util.HashMap;
 public class LongestSubstringWithoutRepeatingCharachers {
     public static int solution(String s){
         HashMap<Byte,Integer> hadChar = new HashMap<>();
-        for(Byte one: s.getBytes()){
-            if(!hadChar.containsKey(one)){
-                hadChar.put(one,1);
+        int maxLenght = 0,beginIndex = 0;
+        byte[] chars = s.getBytes();
+        for(int i=0;i<chars.length;i++){
+            if(hadChar.containsKey(chars[i])&&hadChar.get(chars[i])>=beginIndex){//存在
+                if(maxLenght<i-beginIndex){
+                    maxLenght = i-beginIndex;
+                }
+                beginIndex = hadChar.get(chars[i])+1;
             }
+            hadChar.put(chars[i],i);
         }
-        return hadChar.size();
+        if(maxLenght<chars.length-beginIndex-1){
+            maxLenght=chars.length-beginIndex;
+        }
+        return maxLenght;
     }
     public static void main(String[] args){
-        String s = "abcabcabcabcabc";
+        String s = "abcouyphagkrfxzdefescyouyphagkrfxz";
+        System.out.println(solution(s));
+        s = "pwwkew";
         System.out.println(solution(s));
     }
 }
