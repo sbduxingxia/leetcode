@@ -11,11 +11,26 @@ public class String2Int {
         int result = 0;
         int step = 10;
         int flag = 1;
+        boolean hadFLag=false;
+        boolean isBegin = false;
         int minValue = Integer.MIN_VALUE/step;
         int maxValue = Integer.MAX_VALUE/step;
         for(int i = 0;i<str.length();i++){
             char one = str.charAt(i);
-            if(one>=48&&one<=57){
+
+            if(isBegin&&(one<48&&one>57)){
+                break;
+            }
+            if(one=='-'||one=='+'||one==' '){
+                if(hadFLag){
+                    break;
+                }else if(one==' '){
+
+                }else{
+                    hadFLag = true;
+                    flag = one=='-'?-1:1;
+                }
+            }else if(one>=48&&one<=57){
                 if(result>maxValue){
                     return Integer.MAX_VALUE;
                 }else if(result<minValue){
@@ -25,19 +40,16 @@ public class String2Int {
                 }else if(result == minValue&&one>'8'){
                     return Integer.MIN_VALUE;
                 }
+                hadFLag = true;
                 result = result*step+(one - 48)*flag;
-            }else if(one == '.'){
+            }else{
                 break;
-            }else if(one=='-'){
-                if(result==0){
-                    flag = -1 * flag;
-                }
             }
         }
         return result;
     }
     public static void main(String[] args){
-        String str = "--21474836.471";
+        String str ="123  456" ;//"  -0012a42";//"   +0 123";//
         System.out.println(solution(str));
     }
 }
