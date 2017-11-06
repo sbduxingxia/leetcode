@@ -4,6 +4,16 @@ package com.zhp.leetcode.linked;
  * @author zhp.dts
  * @date 2017/11/6.
  * @info 整数类型倒叙展示
+ * @question Given a 32-bit signed integer, reverse digits of an integer.
+ *  Example 1:
+        Input: 123
+        Output:  321
+    Example 2:
+        Input: -123
+        Output: -321
+    Example 3:
+        Input: 120
+        Output: 21
  */
 public class ReverseInteger {
     public static int solution(int x){
