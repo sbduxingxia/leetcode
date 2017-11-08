@@ -51,5 +51,8 @@ public class String2Int {
     public static void main(String[] args){
         String str ="123  456" ;//"  -0012a42";//"   +0 123";//
         System.out.println(solution(str));
+
+        String source= "370312";
+        System.out.println(source.substring(0,source.length()-2));
     }
 }

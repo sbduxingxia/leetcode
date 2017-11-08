@@ -1,4 +1,4 @@
-package com.zhp.leetcode.linked.def;
+package com.zhp.leetcode.linked;
 
 /**
  * @author zhp.dts
