@@ -6,6 +6,10 @@ import java.util.List;
 /**
  * @author zhp.dts
  * @date 2017/11/14.
+ * @info 匹配字符串是合理的通过{}\[]\()合理结束，
+ * @demo
+ * "()" 和 "()[]{}" 应该返回true
+ * "([)]" 应该返回false
  */
 public class ValidParentheses {
     public static boolean solution(String s){
